@@ -27,9 +27,27 @@
     <ClInclude Include="2DMockUpPrj.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Ccore.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CKeyManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleTon.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="2DMockUpPrj.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ccore.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleTon.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
