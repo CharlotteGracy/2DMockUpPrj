@@ -124,11 +124,11 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.cbWndExtra     = 0; // cbClsExtra와 유사하니 개별 윈도우에서 사용하고자 하는 여분의 메모리양을 지정
     wcex.hInstance      = hInstance; // 윈도우 클래스를 등록한 인스턴스의 핸들
     wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_MY2DMOCKUPPRJ)); //프로그램 아이콘
+    wcex.hIconSm = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL)); // 타이틀바 좌상단과 윈도우가 최소화 되었을 때 보여주는 아이콘을 지정
     wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW); // 커서 지정
     wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1); //윈도우 작업영역에 칠한 배경 브러시
     wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_MY2DMOCKUPPRJ); // 윈도우에서 사용할 메뉴 지정
     wcex.lpszClassName  = szWindowClass; // 윈도우 클래스의 이름
-    wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL)); // 타이틀바 좌상단과 윈도우가 최소화 되었을 때 보여주는 아이콘을 지정
 
     return RegisterClassExW(&wcex);
 }
@@ -164,6 +164,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
       return FALSE;
    }
 
+   
    RECT rc;
    rc.left = 0;
    rc.top = 0;
