@@ -27,7 +27,7 @@
     <ClInclude Include="2DMockUpPrj.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Ccore.h">
+    <ClInclude Include="CCore.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="CKeyManager.h">
@@ -41,7 +41,7 @@
     <ClCompile Include="2DMockUpPrj.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Ccore.cpp">
+    <ClCompile Include="CCore.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CKeyManager.cpp">
