@@ -3,6 +3,7 @@
 
 #include "framework.h"
 #include "2DMockUpPrj.h"
+#include "CCore.h"
 
 #define MAX_LOADSTRING 100
 
@@ -115,7 +116,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     //윈도우 창의 정보를 저장하기 위한 구조체
     WNDCLASSEXW wcex;
 
-    wcex.cbSize = sizeof(WNDCLASSEX);
+    wcex.cbSize = sizeof(WNDCLASSEX); // 구조체의 크기 설정
 
     wcex.style          = CS_HREDRAW | CS_VREDRAW; // 윈도우 클래스의 스타일 지정
     wcex.lpfnWndProc    = WndProc; // 메시지를 처리하는 함수를 지정(윈도우 프로시저)
@@ -197,11 +198,11 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 //
 
-
+/*
 const int g_rectXSize = 50;
 const int g_rectYSize = 100;
 POINT g_rectPos = { 500, 500 };
-
+*/
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
@@ -233,7 +234,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         }
         break;
 
-   
+   /*
     case WM_KEYDOWN:
         switch (wParam) {
         case VK_LEFT:
@@ -250,6 +251,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             break;
         }
         InvalidateRect(hWnd, NULL, false);
+
+
+        */
     case WM_DESTROY:
         PostQuitMessage(0);
         break;
