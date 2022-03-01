@@ -9,6 +9,7 @@
 
 // 전역 변수:
 HINSTANCE hInst;                                // 현재 인스턴스입니다.
+HWND hWnd;                                      //윈도우의 핸들
 WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
 
@@ -75,13 +76,12 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
             if (WM_QUIT == msg.message) {
                 break;
             }
-        }
-
-        //단축키에 대한 처리
-        if(!TranslateAccelerator(msg.hwnd, hAccelTable, &msg)) {
-            
-            TranslateMessage(&msg); //키보드 입력메시지 처리를 담당
-            DispatchMessage(&msg); //WndProc에서 전달된 메시지를 실제 윈도우에 전달 
+            //단축키에 대한 처리
+        
+            if(!TranslateAccelerator(msg.hwnd, hAccelTable, &msg)) { 
+                TranslateMessage(&msg); //키보드 입력메시지 처리를 담당
+                DispatchMessage(&msg); //WndProc에서 전달된 메시지를 실제 윈도우에 전달 
+             }
         }
         else {
         //게임 처리
@@ -91,20 +91,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     }
  
 
-    /*
-    while (GetMessage(&msg, nullptr, 0, 0))
-    {
-        if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
-        {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
-        }
-    }
-    */
     return (int) msg.wParam;
 }
-
-
 
 //
 //  함수: MyRegisterClass()
@@ -235,26 +223,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         }
         break;
 
-   /*
-    case WM_KEYDOWN:
-        switch (wParam) {
-        case VK_LEFT:
-            g_rectPos.x -= 10;
-            break;
-        case VK_RIGHT:
-            g_rectPos.x += 10;
-            break;
-        case VK_UP:
-            g_rectPos.x -= 10;
-            break;
-        case VK_DOWN:
-            g_rectPos.x += 10;
-            break;
-        }
-        InvalidateRect(hWnd, NULL, false);
-
-
-        */
     case WM_DESTROY:
         PostQuitMessage(0);
         break;

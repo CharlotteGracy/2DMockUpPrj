@@ -30,8 +30,8 @@ public:
 
 
 private:
-	type();
-	~type();
+	type() {};
+	~type() {};
 
 
 // ΩÃ±€≈Ê ≈¨∑°Ω∫ ¡§¿«
