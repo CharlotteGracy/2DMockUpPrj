@@ -1,12 +1,16 @@
 #pragma once
-class CCore: public SingleTon<CCore>
+class CCore
 {
 	SINGLETON(CCore);
 
 
 
+private:
+	HDC m_hDC;
+
 public:
 	void update();
 	void render();
+	void init();
 
 };
