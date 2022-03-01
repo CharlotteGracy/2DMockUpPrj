@@ -1,7 +1,7 @@
 #pragma once
 class CCore: public SingleTon<CCore>
 {
-//	SINGLETON(CCore);
+	SINGLETON(CCore);
 
 
 

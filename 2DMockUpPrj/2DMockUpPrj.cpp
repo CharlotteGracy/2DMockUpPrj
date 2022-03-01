@@ -187,11 +187,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 //
 
-/*
-const int g_rectXSize = 50;
-const int g_rectYSize = 100;
-POINT g_rectPos = { 500, 500 };
-*/
+
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
@@ -223,8 +219,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         }
         break;
 
-    case WM_DESTROY:
-        PostQuitMessage(0);
+    case WM_DESTROY: //윈도우가 종료될 때 실행됨.
+        PostQuitMessage(0); //메시지 큐에 WM_QUIT 입력
         break;
     default:
         return DefWindowProc(hWnd, message, wParam, lParam);

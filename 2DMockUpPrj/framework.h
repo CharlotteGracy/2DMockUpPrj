@@ -13,7 +13,18 @@
 #include <malloc.h>
 #include <memory.h>
 #include <tchar.h>
+#include "SingleTon.h"
+#include "CCore.h"
 
+//===============================
+// ##		디파인문		##
+//===============================
+
+#define WINSTARTX 100
+#define WINSTARTY 100
+#define WINSIZEX 1280
+#define WINSIZEY 720
+#define WINSTYLE		WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX
 
 
 //=======================================
@@ -43,6 +54,12 @@ extern HWND hWnd;
 	이는 다른 인스턴스가 생성되지 않도록 처리할 수 있고, 접근방법 또한 제한을 둘 수 있다.
 
 */
+
+
+
+/*
+=====임시
+
 
 
 template <typename T>
@@ -84,4 +101,4 @@ void SingleTon<T>::release() {
 	}
 }
 
-
+*/
