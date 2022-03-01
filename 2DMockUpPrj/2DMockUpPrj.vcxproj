@@ -149,15 +149,18 @@
   <ItemGroup>
     <ClInclude Include="2DMockUpPrj.h" />
     <ClInclude Include="CCore.h" />
+    <ClInclude Include="CGameObject.h" />
     <ClInclude Include="CKeyManager.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SingleTon.h" />
+    <ClInclude Include="struct.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="2DMockUpPrj.cpp" />
     <ClCompile Include="CCore.cpp" />
+    <ClCompile Include="CGameObject.cpp" />
     <ClCompile Include="CKeyManager.cpp" />
     <ClCompile Include="SingleTon.cpp" />
   </ItemGroup>

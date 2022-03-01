@@ -30,8 +30,8 @@ public:
 
 
 private:
-	type() {}
-	~type() {}
+	type();
+	~type();
 
 
 // 싱글톤 클래스 정의
@@ -50,7 +50,7 @@ protected:
 public:
 	static T* getInst() {
 		//싱글톤 객체가 없으면 새로 만들어 전달
-		if (nullptr == instance) {
+		if (nullptr == _instance) {
 			_instance = new T;
 		}
 		return _instacnce;
