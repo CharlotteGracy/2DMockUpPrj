@@ -23,7 +23,7 @@ void CTimeManager::update() {
 	++updateCount;
 	updateOneSecond += m_dDT;
 	if (updateOneSecond >= 1.0) {
-		m_uiFPs = updateCount;
+		m_uiFPS = updateCount;
 
 		updateOneSecond = 0;
 		updateCount = 0;

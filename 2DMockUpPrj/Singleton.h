@@ -19,25 +19,23 @@
 */
 
 // ΩÃ±€≈Ê ∏≈≈©∑Œ ¡§¿«
-
-#define SINGLETON(type)
-
-public: 
-	static type* getInst() {
-		static type _instacne;
-		return &_instance;
-	}
+		
 
 
-private:
-	type();
-	~type();
+
+#define SINGLETON(type) \
+public:									\
+	static type* getInst() {			\
+		static type _instance;			\
+		return &_instance;				\
+	}									\
+private: \
+	type(); \
+	~type();	
 
 
 // ΩÃ±€≈Ê ≈¨∑°Ω∫ ¡§¿«
-
 template<typename T>
-
 class SingleTon
 {
 protected:
@@ -53,7 +51,7 @@ public:
 		if (nullptr == _instance) {
 			_instance = new T;
 		}
-		return _instacnce;
+		return _instance;
 	}
 	void release() {
 		//ΩÃ±€≈Ê¿Ã ¿÷¿∏∏È «ÿ¡¶«—¥Ÿ.
