@@ -18,6 +18,13 @@ public:
 	CScene();
 	virtual ~CScene();
 
+	virtual void update();
+	virtual void render(HDC hDC);
+	virtual void Enter() = 0;
+	virtual void Exit() = 0;
+
+
+
 
 	void SetName(const wstring& strName);
 	wstring GetName();

@@ -3,11 +3,12 @@
 #include "CGameObject.h"
 
 
-CGameObject object;
 
 CCore::CCore() {
 	//게임 화면을 그리기 위한 DC 핸들값 초기화
 	m_hDC = 0;
+	m_hMemDC = 0;
+	m_hBMP = 0;
 }
 
 CCore::~CCore() {
@@ -22,30 +23,9 @@ void CCore::update() {
 //게임 정보 갱신 진행
 
 	CTimeManager::getInst()->update();
-	//TODO: getInst 계속 에러나는데 대체 어디에 넣을 걸 안 넣을 거지
-
-	fPoint pos = object.GetPos();
-
-
-	// GetAsuncKeyState: 메시지 큐에 키 입력을 받는 방식이 아닌 현재 상태의 키 입력상태를 확인
-
-	if (GetAsyncKeyState(VK_LEFT) & 0x8000) {
-		pos.x -= 100 * CTimeManager::getInst()->GetDT();
-	}
-
-	if (GetAsyncKeyState(VK_RIGHT) & 0x8000) {
-		pos.x += 100 * CTimeManager::getInst()->GetDT();
-	}
-
-	if (GetAsyncKeyState(VK_UP) & 0x8000) {
-		pos.y -= 100 * CTimeManager::getInst()->GetDT();
-	}
-
-	if (GetAsyncKeyState(VK_DOWN) & 0x8000) {
-		pos.y += 100 * CTimeManager::getInst()->GetDT();
-	}
-
-	object.SetPos(pos);
+	CKeyManager::getInst()->update();
+	CSceneManager::getInst()->update();
+	
 }
 
 void CCore::render() {
@@ -53,39 +33,13 @@ void CCore::render() {
 
 	Rectangle(m_hMemDC, -1, -1, WINSIZEX + 1, WINSIZEY + 1);
 
-	Rectangle(m_hMemDC,
-		object.GetPos().x - object.GetScale().x / 2,
-		object.GetPos().y - object.GetScale().y / 2,
-		object.GetPos().x + object.GetScale().x / 2,
-		object.GetPos().y + object.GetScale().y / 2
-		);
-
-
-	Rectangle(m_hMemDC,
-		object.GetPos().x - object.GetScale().x / 2 +200,
-		object.GetPos().y - object.GetScale().y / 2,
-		object.GetPos().x + object.GetScale().x / 2+200,
-		object.GetPos().y + object.GetScale().y / 2
-	);
-
-	Rectangle(m_hMemDC,
-		object.GetPos().x - object.GetScale().x / 2,
-		object.GetPos().y - object.GetScale().y / 2 +200,
-		object.GetPos().x + object.GetScale().x / 2,
-		object.GetPos().y + object.GetScale().y / 2 +200
-	);
-	Rectangle(m_hMemDC,
-		object.GetPos().x - object.GetScale().x / 2+200,
-		object.GetPos().y - object.GetScale().y / 2+200,
-		object.GetPos().x + object.GetScale().x / 2+200,
-		object.GetPos().y + object.GetScale().y / 2+200
-	);
+	CSceneManager::getInst()->render(m_hMemDC);
 
 	//오른쪽 상단에 FPS 표시
 	WCHAR strFPS[6];
 	swprintf_s(strFPS, L"%5d", CTimeManager::getInst()->GetFPS());
 	TextOutW(m_hMemDC, WINSIZEX - 50, 10, strFPS, 5);
-	BitBlt(m_hDC, 0, 0, WINSIZEX, WINSIZEY, m_hMemDC, 0, 0, SRCCORY);
+	BitBlt(m_hDC, 0, 0, WINSIZEX, WINSIZEY, m_hMemDC, 0, 0, SRCCOPY);
 }
 
 void CCore::init() {
@@ -102,9 +56,7 @@ void CCore::init() {
 	HBITMAP hOldBitmap = (HBITMAP)SelectObject(m_hMemDC, m_hBMP);
 	DeleteObject(hOldBitmap);
 
-	object = CGameObject(fPoint(100, 100), fPoint{ 100,100 });
 
 
 
-	object = CGameObject(fPoint{ 100,100 }, fPoint{ 100,100 });
 }

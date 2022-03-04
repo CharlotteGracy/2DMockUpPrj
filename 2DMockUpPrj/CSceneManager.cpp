@@ -20,6 +20,17 @@ CSceneManager::~CSceneManager() {
 
 
 }
+
+void CSceneManager::update() {
+	m_pCurScene->update();
+
+}
+void CSceneManager::render(HDC hDC) {
+	m_pCurScene->render(hDC);
+}
+
+
+
 void CSceneManager::init() {
 
 	m_arrScene[(size_t)GROUP_SCENE::START] = new CScene_Start;
