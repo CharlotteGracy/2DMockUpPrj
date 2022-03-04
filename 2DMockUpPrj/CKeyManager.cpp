@@ -14,6 +14,21 @@ CKeyManager::~CKeyManager() {
 }
 
 void CKeyManager::update() {
+	//현재 선택(Focus)된 윈도우가 게임 윈도우인가를 확인 
+	HWND curWnd = GetFocus();
+	if (hWnd != curWnd) {
+		//윈도우가 선택(Focus)된 상태가 아닐 경우 키입력을 해제시킴
+		for (int key = 0; key < VKEY_SIZE; key++) {
+			m_arrPrevKey[key] = m_arrCurKey[key];
+			m_arrCurKey[key] = false;
+		}
+		return;
+	}
+	// 모든 키 사이즈만큼 반복하며 입력상태 확인
+	for (int key = 0; key < VKEY_SIZE; key++) {
+		m_arrPrevKey[key] = m_arrCurKey[key];
+		m_arrCurKey[key] = false;
+	}
 
 }
 
