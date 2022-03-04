@@ -65,9 +65,6 @@
     <ClCompile Include="CKeyManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="SingleTon.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="CGameObject.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>

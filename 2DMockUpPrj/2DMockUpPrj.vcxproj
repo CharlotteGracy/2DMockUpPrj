@@ -170,7 +170,6 @@
     <ClCompile Include="CSceneManager.cpp" />
     <ClCompile Include="CScene_Start.cpp" />
     <ClCompile Include="CTimeManager.cpp" />
-    <ClCompile Include="SingleTon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2DMockUpPrj.rc" />
