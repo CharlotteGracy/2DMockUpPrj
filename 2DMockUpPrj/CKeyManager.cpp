@@ -9,11 +9,11 @@ CKeyManager::CKeyManager() {
 	}
 }
 
-CKeyManger::~CKeyManager() {
+CKeyManager::~CKeyManager() {
 
 }
 
-void CKeyManger::update() {
+void CKeyManager::update() {
 
 }
 
