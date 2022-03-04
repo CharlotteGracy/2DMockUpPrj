@@ -90,6 +90,9 @@ void CCore::render() {
 
 void CCore::init() {
 	CTimeManager::getInst()->init();
+	CKeyManager::getInst()->init();
+	CSceneManager::getInst()->init();
+
 	m_hDC = GetDC(hWnd);
 
 	//더블 버퍼링의 메모리 DC와 비트맵 생성

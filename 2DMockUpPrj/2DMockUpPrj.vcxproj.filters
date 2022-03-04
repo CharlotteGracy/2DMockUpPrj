@@ -51,6 +51,9 @@
     <ClInclude Include="CSceneManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CScene_Start.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="2DMockUpPrj.cpp">
@@ -75,6 +78,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CSceneManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene_Start.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
