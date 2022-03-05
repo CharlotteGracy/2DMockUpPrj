@@ -43,7 +43,7 @@ void CGameObject::render(HDC hDC) {
 	Rectangle(hDC,
 		m_fptPos.x - m_fptScale.x / 2,
 		m_fptPos.y - m_fptScale.y / 2,
-		m_fptPos.x - m_fptScale.x / 2,
-		m_fptPos.y - m_fptScale.y / 2
+		m_fptPos.x + m_fptScale.x / 2,
+		m_fptPos.y + m_fptScale.y / 2
 		);
 }

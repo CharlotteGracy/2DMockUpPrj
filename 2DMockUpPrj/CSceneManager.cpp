@@ -37,6 +37,7 @@ void CSceneManager::init() {
 	m_arrScene[(size_t)GROUP_SCENE::START]->SetName(L"Start_Scene");
 
 	m_pCurScene = m_arrScene[(size_t)GROUP_SCENE::START];
+	m_pCurScene->Enter();
 }
 
 
