@@ -23,6 +23,7 @@
 
 #include "SingleTon.h"
 #include "struct.h"
+#include "Logger.h"
 
 
 

@@ -11,5 +11,7 @@ CPathManager::~CPathManager() {
 
 void CPathManager::init() {
 	GetCurrentDirectory(255, m_szContentPath);
+
+	Logger::info(m_szContentPath);
 }
 
