@@ -54,6 +54,12 @@
     <ClInclude Include="CScene_Start.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CResourceManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CPathManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="2DMockUpPrj.cpp">
@@ -78,6 +84,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CScene_Start.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CResourceManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CPathManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

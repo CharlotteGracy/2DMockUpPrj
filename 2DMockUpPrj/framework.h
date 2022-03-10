@@ -72,5 +72,6 @@ extern HWND hWnd;
 #include "CTimeManager.h"
 #include "CKeyManager.h"
 #include "CSceneManager.h"
-
+#include "CPathManager.h"
+#include "CResourceManager.h"
 using namespace std;

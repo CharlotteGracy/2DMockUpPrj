@@ -43,6 +43,7 @@ void CCore::render() {
 }
 
 void CCore::init() {
+	CPathManager::getInst()->init();
 	CTimeManager::getInst()->init();
 	CKeyManager::getInst()->init();
 	CSceneManager::getInst()->init();
