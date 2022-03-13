@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="2DMockUpPrj.h" />
+    <ClInclude Include="CCollider.h" />
     <ClInclude Include="CCore.h" />
     <ClInclude Include="CGameObject.h" />
     <ClInclude Include="CKeyManager.h" />
@@ -166,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="2DMockUpPrj.cpp" />
+    <ClCompile Include="CCollider.cpp" />
     <ClCompile Include="CCore.cpp" />
     <ClCompile Include="CGameObject.cpp" />
     <ClCompile Include="CKeyManager.cpp" />

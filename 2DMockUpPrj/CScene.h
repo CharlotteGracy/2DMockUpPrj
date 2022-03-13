@@ -20,6 +20,7 @@ public:
 
 	virtual void update();
 	virtual void render(HDC hDC);
+	virtual void finalupdate();
 	virtual void Enter() = 0;
 	virtual void Exit() = 0;
 

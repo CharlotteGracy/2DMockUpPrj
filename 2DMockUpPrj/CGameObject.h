@@ -1,4 +1,7 @@
 #pragma once
+
+class CCollider;
+
 class CGameObject
 {
 
@@ -6,9 +9,10 @@ private:
 	fPoint m_fptPos;
 	fPoint m_fptScale;
 
+	CCollider* m_pCollider;
+
 public:
 	CGameObject();
-	CGameObject(fPoint pos, fPoint scale);
 	virtual ~CGameObject();
 
 	void SetPos(fPoint pos);
@@ -17,8 +21,16 @@ public:
 	fPoint GetPos();
 	fPoint GetScale();
 
-	void update();
-	void render(HDC hDC);
+	virtual void update() = 0;
+	virtual void finalupdate() final; //상속받는 클래스가 오버라이딩 할 수 없게 막는 final 키워드
+	virtual void render(HDC hDC);
+
+	CCollider* GetCollider();
+
+	void CreateCollider();
+
 };
+
+
 
 
