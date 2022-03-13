@@ -4,10 +4,11 @@ class CPathManager
 	SINGLETON(CPathManager);
 
 private:
-	WCHAR m_szContentPath[255];
+	WCHAR m_strContentPath[255];
 
 public:
 	void init();
 
+	const wchar_t* GetContentPath();
 };
 
