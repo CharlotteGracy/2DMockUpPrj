@@ -1,8 +1,8 @@
 #include "framework.h"
-#include "Ccore.h"
+#include "CCore.h"
 #include "CGameObject.h"
 
-
+ 
 
 CCore::CCore() {
 	//게임 화면을 그리기 위한 DC 핸들값 초기화
@@ -60,4 +60,8 @@ void CCore::init() {
 
 
 
+}
+
+HDC CCore::GetMainDC() {
+	return m_hDC;
 }
