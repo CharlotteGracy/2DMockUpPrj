@@ -37,7 +37,7 @@ fPoint CGameObject::GetScale() {
 void CGameObject::finalupdate() {
 
 	if (nullptr != m_pCollider) {
-		m_pCollider->finalupdate()
+		m_pCollider->finalupdate();
 	}
 
 }
