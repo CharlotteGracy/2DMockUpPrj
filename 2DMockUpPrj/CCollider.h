@@ -4,7 +4,7 @@ class CGameObject;
 
 class CCollider
 {
-	friend Class CGameObject;
+	friend class CGameObject;
 
 private:
 	CGameObject* m_pOwner;

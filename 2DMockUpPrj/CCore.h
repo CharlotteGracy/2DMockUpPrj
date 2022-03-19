@@ -15,4 +15,5 @@ public:
 	void render();
 	void init();
 
+	HDC GetMainDC();
 };

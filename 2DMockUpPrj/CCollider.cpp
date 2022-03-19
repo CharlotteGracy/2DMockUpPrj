@@ -8,7 +8,7 @@ CCollider::CCollider() {
 
 }
 
-CCollider::CCollider() {
+CCollider::~CCollider() {
 
 }
 
