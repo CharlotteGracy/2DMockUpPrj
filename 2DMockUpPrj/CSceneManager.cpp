@@ -40,6 +40,11 @@ void CSceneManager::init() {
 	m_pCurScene->Enter();
 }
 
+CScene* CSceneManager::GetCurScene()
+{
+	return m_pCurScene;
+}
+
 
 
 

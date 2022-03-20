@@ -35,7 +35,9 @@
 enum class GROUP_GAMEOBJ {
 	DEFAULT,
 	PLAYER,
+	MONSTER,
 	SIZE,
+
 };
 
 enum class GROUP_SCENE {
@@ -58,6 +60,11 @@ enum class GROUP_SCENE {
 #define WINSIZEY 720
 #define WINSTYLE		WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX
 
+#define fDT		CTimeManager::getInst()->GetDT()
+#define Key(key) CKeyManager::getInst()->GetButton(key)
+#define KeyUp(key) CKeyManager::getInst()->GetButton(key)
+#define KeyDown(key) CKeyManager::getInst()->GetButton(key)
+
 
 //=======================================
 // ## 전역변수(인스턴스, 윈도우 핸들) ##
@@ -76,4 +83,5 @@ extern HWND hWnd;
 #include "CSceneManager.h"
 #include "CPathManager.h"
 #include "CResourceManager.h"
+
 using namespace std;

@@ -16,7 +16,7 @@ void CPathManager::init() {
 	//상위 폴더로
 	int iLen = wcslen(m_strContentPath); //wchar_t 문자열 길이 확인
 
-	for (int i = iLen - 1; i = 0; i--) {
+	for (int i = iLen - 1; i >= 0; i--) {
 		if ('\\' == m_strContentPath[i]) {
 			m_strContentPath[i] = '\0';
 			break;
